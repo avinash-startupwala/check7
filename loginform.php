@@ -43,6 +43,32 @@
       </ul>
       
       <div class="tab-content">
+         <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="https://startupwala.herokuapp.com/login.php" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="a.php">Forgot Password?</a></p>
+          
+          <button class="button button-block"/>Log In</button>
+          
+          </form>
+
+        </div>
         <div id="signup">   
           <h1>Sign Up for Free</h1>
           
@@ -125,32 +151,7 @@
 
           </div>
         
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="https://startupwala.herokuapp.com/login.php" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="a.php">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
-        </div>
+       
   
       
 </div> <!-- /form -->
