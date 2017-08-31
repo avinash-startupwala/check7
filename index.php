@@ -130,18 +130,18 @@
           
           <form action="login.php" method="post">
           
-            <div class="field-wrap">
+   <div class="field-wrap">
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="email" id="email" name="email" required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password" id="password" name="password" required autocomplete="off"/>
           </div>
           
           <p class="forgot"><a href="a.php">Forgot Password?</a></p>
