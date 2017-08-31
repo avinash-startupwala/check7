@@ -30,7 +30,7 @@ echo "sumbit is NOT set";
       // $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
       // Grab the user-entered log-in data
-      $user_username =  $herokupostgrsdatabse->escape_value(trim($_POST['username']));
+      $user_username =  $herokupostgrsdatabse->escape_value(trim($_POST['email']));
 
      // $save_username = $user_username;
       $user_password =  $herokupostgrsdatabse->escape_value(trim($_POST['password']));
