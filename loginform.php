@@ -46,20 +46,20 @@
          <div id="login">   
           <h1>Welcome Back!</h1>
           
-          <form action="https://startupwala.herokuapp.com/login.php" method="post">
+          <form action="login.php" method="post">
           
             <div class="field-wrap">
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="email" name = "email" id="email" required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password" name="password" id="password" required autocomplete="off"/>
           </div>
           
           <p class="forgot"><a href="a.php">Forgot Password?</a></p>
