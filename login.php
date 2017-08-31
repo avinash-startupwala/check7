@@ -9,7 +9,7 @@ require_once("heroku_postgres_database.php");
   // Clear the error message
   $error_msg = "";
 
-print_r('$_POST');
+print_r($_POST);
 
   // If the user isn't logged in, try to log them in
   if (!isset($_SESSION['user_id'])) {
