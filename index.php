@@ -148,7 +148,7 @@
           
           <button class="button button-block"/>Log In</button>
           
-            <button button type="submit" class="button button-block"/>Log In</button>
+            <button type="submit" class="button button-block"/>Log In</button>
     
           </form>
 
