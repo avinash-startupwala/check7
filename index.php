@@ -128,7 +128,7 @@
         <div id="login">   
           <h1>Welcome Back!</h1>
           
-          <form action="https://startupwala.herokuapp.com/login.php" method="post">
+          <form action="login.php" method="post">
           
             <div class="field-wrap">
             <label>
