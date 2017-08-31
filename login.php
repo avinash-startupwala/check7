@@ -25,7 +25,7 @@ print_r($_POST);
      // $save_username = $user_username;
       $user_password =  $herokupostgrsdatabse->escape_value(trim($_POST['password']));
 
-      if (!empty($user_username) && !empty($user_password)) {
+     
         // Look up the username and password in the database
         $query = "SELECT user_id, email FROM registered_users WHERE email = '$user_username' AND password = '$user_password'";
         $data = $herokupostgrsdatabse->query($query);
@@ -45,11 +45,8 @@ print_r($_POST);
           // The username/password are incorrect so set an error message
           $error_msg = 'Sorry, you must enter a valid username and password to log in.';
         }
-      }
-      else {
-        // The username/password weren't entered so set an error message
-        $error_msg = 'Sorry, you must enter your username and password to log in.';
-      }
+      
+
     }
   }
 
