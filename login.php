@@ -11,9 +11,19 @@ require_once("heroku_postgres_database.php");
 
 print_r($_POST);
 
+echo "<br>";
+
+ if (isset($_POST['submit'])) {
+ echo "submit is set";
+ }
+
+else {
+echo "sumbit is NOT set";
+}
+
   // If the user isn't logged in, try to log them in
   if (!isset($_SESSION['user_id'])) {
-    if (isset($_POST['submit'])) {
+
       // Connect to the database
 
       $herokupostgrsdatabse = new HerokuPostgresDatabase();
@@ -48,7 +58,7 @@ print_r($_POST);
       
 
     }
-  }
+  
 
 
 
