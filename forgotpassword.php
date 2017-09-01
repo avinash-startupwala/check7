@@ -53,25 +53,24 @@ else {
   <div id="login">   
           <h1>Welcome Back!</h1>
           
-          <form action="https://startupwala.herokuapp.com/forgotpassword.php" method="post">
+         <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
           
             <div class="field-wrap">
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="email" id="email" name="email"  required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password" id="password" name="password" required autocomplete="off"/>
           </div>
           
-          <p class="forgot"><a href="a.php">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
+
+          <button class="button button-block"/>Change Password</button>
           
           </form>
 
