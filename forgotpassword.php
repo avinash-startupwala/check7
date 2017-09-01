@@ -41,9 +41,12 @@ else {
   echo "Enter your email and new password";
 }
 ?>
+	
   <div class="form">
       
-      <div class="tab-content">
+
+      
+    
         
   <div id="login">   
           <h1>Welcome Back!</h1>
@@ -65,12 +68,11 @@ else {
           </div>
           
 
-          <button class="button button-block"/>Change Password</button>
+          <button type="submit" class="button button-block"/>Change Password</button>
           
           </form>
 
-        </div>
-        </div>
+
   
       
 </div> <!-- /form -->
