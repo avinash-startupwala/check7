@@ -144,7 +144,7 @@
             <input type="password" id="password" name="password" required autocomplete="off"/>
           </div>
           
-          <p class="forgot"><a href="a.php">Forgot Password?</a></p>
+          <p class="forgot"><a href="forgotpassword.php">Forgot Password?</a></p>
           
           <button type="submit" class="button button-block"/>Log In</button>
           
