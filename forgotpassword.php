@@ -16,7 +16,7 @@
 <?php
 require_once("heroku_postgres_database.php");
 
-  if(isset($_POST['submit']))
+  if(isset($_POST['email']))
   {
   $email = $_POST['email'];
 
