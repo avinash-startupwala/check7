@@ -1,11 +1,18 @@
 <!DOCTYPE html>
+<html >
 <head>
-  <title>Forgot Password</title>
+  <meta charset="UTF-8">
+  <title>Sign-Up Form</title>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
 </head>
-<body>
-  <h3>Forgot Password</h3>
 
+<body>
 <?php
 require_once("heroku_postgres_database.php");
 
@@ -34,21 +41,47 @@ else {
   echo "Enter your email and new password";
 }
 ?>
+  <div class="form">
+      
+      <ul class="tab-group">
+      
+        <li class="tab active"><a href="#login">Change Password</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        
+  <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="https://startupwala.herokuapp.com/forgotpassword.php" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="a.php">Forgot Password?</a></p>
+          
+          <button class="button button-block"/>Log In</button>
+          
+          </form>
 
-  <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MM_MAXFILESIZE; ?>" />
-    <fieldset>
-      <legend>Reset Password</legend>
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" value="<?php if (!empty($first_name)) echo $first_name; ?>" /><br />
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" value="<?php if (!empty($last_name)) echo $last_name; ?>" /><br />
- 
- 
-     
+        </div>
+  
+      
+</div> <!-- /form -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    </fieldset>
-    <input type="submit" value="Save Profile" name="submit" />
-  </form>
+    <script src="js/index.js"></script>
+
 </body>
 </html>
