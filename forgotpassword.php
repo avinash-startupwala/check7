@@ -9,9 +9,11 @@
 <?php
 require_once("heroku_postgres_database.php");
 
+  if(isset($_POST['submit']))
+  {
   $email = $_POST['email'];
-  
-  
+
+
  $herokupostgrsdatabse = new HerokuPostgresDatabase();
 $selectquery = "select * from registered_users where email = '$email' ";
 $select_result =  $herokupostgrsdatabse->query($selectquery);
@@ -25,6 +27,11 @@ echo "Password Changed Successfully";
 }
 else {
 	echo "You are not a valid user";
+}
+}
+
+else {
+  echo "Enter your email and new password";
 }
 ?>
 
