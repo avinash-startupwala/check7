@@ -9,32 +9,23 @@
 <?php
 require_once("heroku_postgres_database.php");
 
+  $email = $_POST['email'];
+  
+  
  $herokupostgrsdatabse = new HerokuPostgresDatabase();
-
 $selectquery = "select * from registered_users where email = '$email' ";
-
-
-
 $select_result =  $herokupostgrsdatabse->query($selectquery);
-
   if (pg_num_rows($select_result) == 1) 
         {
 $password = $_POST['password'];
 $email = $_POST['email'];
-
           $update_user_data_query = "UPDATE registered_users SET password = '$password' WHERE email = '$email'";
-
 $update_user_data_result =  $herokupostgrsdatabse->query($update_user_data_query);
-
 echo "Password Changed Successfully";
-
 }
-
 else {
-
 	echo "You are not a valid user";
 }
-
 ?>
 
   <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
