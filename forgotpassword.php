@@ -14,7 +14,6 @@
 
 <body>
 <?php
-
   if(isset($_POST['email']))
   {
   require_once("heroku_postgres_database.php");
@@ -29,20 +28,23 @@ $email = $_POST['email'];
           $update_user_data_query = "UPDATE registered_users SET password = '$password' WHERE email = '$email'";
 $update_user_data_result =  $herokupostgrsdatabse->query($update_user_data_query);
 echo "Password Changed Successfully";
-	  echo "<br>";
-	  echo "You can log in now";
-	  echo "<br>";
-	   echo '&#10084; <a href="loginform.php">Log In</a><br />';
+    echo "<br>";
+    echo "You can log in now";
+    echo "<br>";
+
+    ?>
+     <button class="button button-block"/>Log In</button>
+     <?php
+     //echo '&#10084; <a href="loginform.php">Log In</a><br />';
 }
 else {
-	echo "You are not a valid user";
+  echo "You are not a valid user";
 }
 }
 else {
   echo "Enter your email and new password";
-
 ?>
-	
+  
   <div class="form">
       
 
@@ -84,7 +86,5 @@ else {
 </body>
 </html>
 <?php
-
 }
 ?>
-
