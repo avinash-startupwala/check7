@@ -33,7 +33,7 @@ echo "Password Changed Successfully";
     echo "<br>";
 
     ?>
-     <button class="button button-block"/>Log In</button>
+     <a href="loginform.php" class="button button-block"/>Log In</a>
      <?php
      //echo '&#10084; <a href="loginform.php">Log In</a><br />';
 }
