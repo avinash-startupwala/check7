@@ -43,11 +43,6 @@ else {
 ?>
   <div class="form">
       
-      <ul class="tab-group">
-      
-        <li class="tab active"><a href="#login">Change Password</a></li>
-      </ul>
-      
       <div class="tab-content">
         
   <div id="login">   
@@ -57,14 +52,14 @@ else {
           
             <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              Registered Email Address<span class="req">*</span>
             </label>
             <input type="email" id="email" name="email"  required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
-              Password<span class="req">*</span>
+              New Password<span class="req">*</span>
             </label>
             <input type="password" id="password" name="password" required autocomplete="off"/>
           </div>
@@ -74,6 +69,7 @@ else {
           
           </form>
 
+        </div>
         </div>
   
       
