@@ -8,7 +8,7 @@
 
 <?php
 require_once("heroku_postgres_database.php");
-<?php
+
  $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
 $selectquery = "select * from registered_users where email = '$email' ";
