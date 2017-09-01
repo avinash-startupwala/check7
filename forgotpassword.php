@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <head>
-  <title>Startupwala - Edit Profile</title>
+  <title>Forgot Password</title>
 
 </head>
 <body>
-  <h3>Startupwala - Edit Profile</h3>
+  <h3>Forgot Password</h3>
 
 <?php
 require_once("heroku_postgres_database.php");
@@ -52,3 +52,5 @@ else {
     </fieldset>
     <input type="submit" value="Save Profile" name="submit" />
   </form>
+</body>
+</html>
