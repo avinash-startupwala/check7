@@ -62,7 +62,7 @@
             <input type="password" name="password" id="password" required autocomplete="off"/>
           </div>
           
-          <p class="forgot"><a href="a.php">Forgot Password?</a></p>
+          <p class="forgot"><a href="forgotpassword.php">Forgot Password?</a></p>
           
           <button class="button button-block"/>Log In</button>
           
