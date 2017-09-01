@@ -14,11 +14,11 @@ print_r($_POST);
 echo "<br>";
 
  if (isset($_POST['submit'])) {
- echo "submit is set";
+ 
  }
 
 else {
-echo "sumbit is NOT set";
+
 }
 
   // If the user isn't logged in, try to log them in
@@ -54,6 +54,10 @@ echo "sumbit is NOT set";
         else {
           // The username/password are incorrect so set an error message
           $error_msg = 'Sorry, you must enter a valid username and password to log in.';
+          echo "<br>";
+           echo '&#10084; <a href="loginform.php">Log In</a><br />';
+          
+          
         }
       
 
