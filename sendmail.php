@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 	class SendMail
 	{
 
-			function sendmail($email)
+			function ss($email)
 			{
 		
 				$from = new SendGrid\Email(null, "enquiry@bmcgroup.in");
