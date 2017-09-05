@@ -7,12 +7,12 @@ require 'vendor/autoload.php';
 	class SendMail
 	{
 
-			function sendmail()
+			function sendmail($email)
 			{
-
-				$from = new SendGrid\Email(null, "avinashpawar059@gmail.com");
+		
+				$from = new SendGrid\Email(null, "enquiry@bmcgroup.in");
 $subject = "Hello World from the SendGrid PHP Library!";
-$to = new SendGrid\Email(null, "avinash.pawar@startupwala.com");
+$to = new SendGrid\Email(null, $email);
 $content = new SendGrid\Content("text/plain", "Hello, Email!");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
