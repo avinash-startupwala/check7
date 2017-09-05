@@ -28,7 +28,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
         $herokupostgrsdatabse->query($query);
 
         // Confirm success with the user
-        $sendmailobj->sendmail($email);
+        $sendmailobj->ss($email);
       header('Location: https://startupwala.herokuapp.com/thankyou.html');
 
 
