@@ -10,9 +10,9 @@ echo "<br>";
 // require("path/to/sendgrid-php/sendgrid-php.php");
 //avinash.pawar@startupwala.com
 //avinashpawar059@gmail.com
-$from = new SendGrid\Email(null, "avinashpawar059@gmail.com");
+$from = new SendGrid\Email(null, "avinash.pawar@startupwala.com");
 $subject = "Hello World from the SendGrid PHP Library!";
-$to = new SendGrid\Email(null, "avinash.pawar@startupwala.com");
+$to = new SendGrid\Email(null, "avinashpawar059@gmail.com");
 $content = new SendGrid\Content("text/plain", "Hello, Email!");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
