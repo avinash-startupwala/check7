@@ -1,10 +1,12 @@
 <?php
 
  require_once('heroku_postgres_database.php');
+ require_once('sendmail.php');
 
 
   // Connect to the database
 $herokupostgrsdatabse = new HerokuPostgresDatabase();
+ $sendmailobj = new SendMail();
 
     // Grab the profile data from the POST
     $first_name = $herokupostgrsdatabse->escape_value(trim($_POST['first_name']));
@@ -26,7 +28,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
         $herokupostgrsdatabse->query($query);
 
         // Confirm success with the user
-
+        $sendmailobj->sendmail($email);
       header('Location: https://startupwala.herokuapp.com/thankyou.html');
 
 
