@@ -48,7 +48,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
         $query = "INSERT INTO newusers (first_name,last_name,phone,city,looking_for,email, password,random_key) VALUES ('$first_name', '$last_name','$phone','$city','$looking_for','$email','$password','$random_key')";
         $herokupostgrsdatabse->query($query);
         // Confirm success with the user
-        $sendmailobj->ss($email);
+        $sendmailobj->ss($email,$random_key,$first_name); 
       header('Location: https://startupwala.herokuapp.com/thankyou.html');
         
         // echo '<p>Your new account has been successfully created. You\'re now ready to <a href="login.php">log in</a>.</p>';
