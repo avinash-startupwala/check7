@@ -13,23 +13,7 @@ require 'vendor/autoload.php';
 				$from = new SendGrid\Email(null, "enquiry@bmcgroup.in");
 $subject = "Confirm your Startupwala registration!";
 $to = new SendGrid\Email(null, $email);
-$content = new SendGrid\Content("text/plain", " Dear $first_name,
-      
-      You are receiving this e-mail because you filled the registration form at Site (https://www.startupwala.com/)
-      
-      In order to complete your registration, you need to confirm your email address by clicking on the link below:
-      
-      ?> <a href =https://www.startupwala.com/></click here>
-      <?php
-      
-      If you are unable to click the link, copy-paste it your browser address. 
-      
-      If you did not register to Site, please ignore this email. Someone might have registered with your email address!
-      
-      If you have any questions contact us on registration@site.com or reply to this email.
-      
-      Best Regards,
-      Site Team");
+$content = new SendGrid\Content("text/html+", "<html><body>some text here<a href="https://www.startupwala.com/"></a></body></html>");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 $apiKey = getenv('SENDGRID_API_KEY');
