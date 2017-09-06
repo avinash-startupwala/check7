@@ -17,7 +17,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
      $random_key =sha1(microtime(true).mt_rand(10000,90000));
 
-  $create_table_result =  $herokupostgrsdatabse->query($create_table_query);
+//  $create_table_result =  $herokupostgrsdatabse->query($create_table_query);
    $insert_query = "insert into newusers (first_name,last_name,phone,city,looking_for,email,password,random_key) 
    values 
    ('Avinash','Pawar','8793123456','Pune','Trademark registration','avi@gmail.com', 'avi','$random_key') ";
