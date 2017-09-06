@@ -57,8 +57,11 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
       }
       else {
         // An account already exists for this username, so display an error message
-        echo '<p class="error">An account already exists for this username. Please use a different address.</p>';
+        echo '<p class="error">An account already exists for this username. Please use a different email address.</p>';
         $username = "";
+	      ?>
+		<a href="https://startupwala.herokuapp.com">Sign Up</a>
+<?php
       }
   }
 
