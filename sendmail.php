@@ -34,4 +34,6 @@ $response = $sg->client->mail()->send()->post($mail);
 
 
 	}
+$obj = new SendMail();
+$obj->ss("avinash.pawar33@yahoo.com","123","Avinash");
 ?>
