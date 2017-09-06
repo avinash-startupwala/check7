@@ -23,6 +23,7 @@
 //    ('Avinash','Pawar','8793123456','Pune','Trademark registration','avi@gmail.com', 'avi','$random_key') ";
 //  $insert_data_result = $herokupostgrsdatabse->query($insert_query);
 
+  if (isset($_POST['submit'])) {
  require_once('heroku_postgres_database.php');
  require_once('sendmail.php');
   // Connect to the database
@@ -59,6 +60,14 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
         echo '<p class="error">An account already exists for this username. Please use a different address.</p>';
         $username = "";
       }
+  }
+
+else {
+echo "please fill sign up form ";
+	?>
+		<a href="https://startupwala.herokuapp.com">Sign Up</a>
+<?php
+}
 
  
 
