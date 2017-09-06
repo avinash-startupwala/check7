@@ -9,12 +9,12 @@ require 'vendor/autoload.php';
 
 			function ss($email,$random_key,$first_name)
 			{
+				$address = "www.google.com";
 		
 				$from = new SendGrid\Email(null, "enquiry@bmcgroup.in");
 $subject = "Confirm your Startupwala registration!";
 $to = new SendGrid\Email(null, $email);
-$content = new SendGrid\Content("text/html+", "sf <h1>aassd</h
-1>");
+$content = new SendGrid\Content("text/html+", "sf <a href=$address>click here</a>");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 $apiKey = getenv('SENDGRID_API_KEY');
