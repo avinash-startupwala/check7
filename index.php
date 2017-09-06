@@ -146,7 +146,7 @@
           
           <p class="forgot"><a href="forgotpassword.php">Forgot Password?</a></p>
           
-          <button type="submit" class="button button-block"/>Log In</button>
+          <button type="submit" id="submit" name="submit" class="button button-block"/>Log In</button>
           
                      
 
