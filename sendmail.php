@@ -13,7 +13,7 @@ require 'vendor/autoload.php';
 				$from = new SendGrid\Email(null, "enquiry@bmcgroup.in");
 $subject = "Confirm your Startupwala registration!";
 $to = new SendGrid\Email(null, $email);
-$content = new SendGrid\Content("text/html+", "<html><body>some text here<a href="www.startupwala.com"></a></body></html>");
+$content = new SendGrid\Content("text/html+", "<html><body>hi</body></html>");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 $apiKey = getenv('SENDGRID_API_KEY');
