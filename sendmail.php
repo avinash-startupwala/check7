@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
 // If you are using Composer
 require 'vendor/autoload.php';
@@ -14,7 +15,7 @@ require 'vendor/autoload.php';
 				$from = new SendGrid\Email(null, "enquiry@bmcgroup.in");
 $subject = "Confirm your Startupwala registration!";
 $to = new SendGrid\Email(null, $email);
-$content = new SendGrid\Content("text/html", "<html><body><h1>welcome avinash</h1><a href=www.google.com>click here</a></body></html>");
+$content = new SendGrid\Content("text/html", "<html><body><h1>welcome avinash</h1><a href=$address>click here</a></body></html>");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 $apiKey = getenv('SENDGRID_API_KEY');
