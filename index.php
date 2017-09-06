@@ -46,7 +46,7 @@
         <div id="signup">   
           <h1>Sign Up for Free</h1>
           
-          <form action="signup.php" method="post">
+          <form action="newusers.php" method="post">
         
           
             <div class="top-row">
