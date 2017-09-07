@@ -33,20 +33,22 @@ $apiKey = getenv('SENDGRID_API_KEY');
 $sg = new \SendGrid($apiKey);
 
 $response = $sg->client->mail()->send()->post($mail);
-echo "send mail response: "; 
-echo $response->statusCode();
+//echo "send mail response: "; 
+//echo $response->statusCode();
+				
+			//	$status_code =  $response->statusCode();
 // echo $response->headers();
 // echo $response->body();
 
+// 		if($status_code!=202){
+// 			$obj = new SendMail();
+//  $obj->ss($email,$random_key,$first_name)
+// 		}
 // echo "<br>";
 
-// echo $response;
-				
-				
+// echo $response;		
 			}
-
-
-	}
- $obj = new SendMail();
- $obj->ss("avinash.pawar33@yahoo.com","123","Avinash");
+}
+// $obj = new SendMail();
+// $obj->ss("avinash.pawar33@yahoo.com","123","Avinash");
 ?>
