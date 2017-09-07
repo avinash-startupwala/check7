@@ -1,37 +1,79 @@
 <?php
+
+
+
+// get query : http://localhost/confirmuser/index.php?key=12345&&email=s
+  $random_key = $_GET['key'];
+  $email = $_GET['email'];
+
+echo "hello key= ".$random_key." email= ".$email;
+
+
+
+      
  require_once('heroku_postgres_database.php');
  require_once('sendmail.php');
+
+
   // Connect to the database
 $herokupostgrsdatabse = new HerokuPostgresDatabase();
  $sendmailobj = new SendMail();
-    // Grab the profile data from the POST
-    $first_name = $herokupostgrsdatabse->escape_value(trim($_POST['first_name']));
-      $last_name = $herokupostgrsdatabse->escape_value(trim($_POST['last_name']));
-   $email = $herokupostgrsdatabse->escape_value(trim($_POST['email']));
-   $city = $herokupostgrsdatabse->escape_value(trim($_POST['city']));
-   $looking_for = $herokupostgrsdatabse->escape_value(trim($_POST['00N90000002GeUl']));
-      $phone = $herokupostgrsdatabse->escape_value(trim($_POST['phone']));
-    $password = $herokupostgrsdatabse->escape_value(trim($_POST['password']));
-    
-    //if (!empty($username) && !empty($password1) && !empty($password2) && ($password1 == $password2)) {
-      // Make sure someone isn't already registered using this username
-      $query = "SELECT * FROM registered_users WHERE email = '$username'";
-      $data = $herokupostgrsdatabse->query($query);
-      if (pg_num_rows($data) == 0) {
-        // The username is unique, so insert the data into the database
-        $query = "INSERT INTO registered_users (first_name,last_name,phone,city,looking_for,email, password) VALUES ('$first_name', '$last_name','$phone','$city','$looking_for','$email','$password')";
-        $herokupostgrsdatabse->query($query);
+
+
+   $check_user_query = "select random_key from newusers where email='$email'";
+
+    $check_user_query_result = $herokupostgrsdatabse->query($check_user_query);
+
+     if (pg_num_rows($check_user_query_result) == 0) {
+
+      echo "u cant access this page";
+     }
+
+     else{
+
+       $row = $herokupostgrsdatabse->fetch_array($check_user_query_result);
+
+       $random_key_from_db = $row['random_key'];
+
+       if ($random_key_from_db==$random_key) {
+        $get_all_user_data = "select * from newusers where email='$email'";
+
+          $get_all_user_data_result = $herokupostgrsdatabse->fetch_array($get_all_user_data);
+       $user_data_row = $herokupostgrsdatabse->fetch_array($get_all_user_data_result);
+
+       $first_name = $user_data_row['first_name'];
+
+              $last_name = $user_data_row['last_name'];
+       $phone = $user_data_row['phone'];
+       $city = $user_data_row['city'];
+       $looking_for = $user_data_row['looking_for'];
+       $password = $user_data_row['password'];
+
+
+           $insert_user_data_query = "INSERT INTO registered_users (first_name,last_name,phone,city,looking_for,email, password) VALUES ('$first_name', '$last_name','$phone','$city','$looking_for','$email','$password')";
+        $insert_query_result = $herokupostgrsdatabse->query($insert_user_data_query);
+
         // Confirm success with the user
-        $sendmailobj->ss($email);
-      header('Location: https://startupwala.herokuapp.com/thankyou.html');
-        
-        // echo '<p>Your new account has been successfully created. You\'re now ready to <a href="login.php">log in</a>.</p>';
-       
-        //exit();
-      }
-      else {
-        // An account already exists for this username, so display an error message
-        echo '<p class="error">An account already exists for this username. Please use a different address.</p>';
-        $username = "";
-      }
+       // $sendmailobj->ss($email);
+     // header('Location: https://startupwala.herokuapp.com/thankyou.html');
+
+
+
+echo "insert query result = ".$insert_query_result;
+       }
+       else {
+        echo "this is not a registered email in startupwala database";
+
+       }
+
+      
+
+     }
+
+
+
+
+
+
+
 ?>
