@@ -46,7 +46,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
        echo "in second if 3";
         $get_all_user_data = "select * from newusers where email='$email'";
 
-          $get_all_user_data_result = $herokupostgrsdatabse->fetch_array($get_all_user_data);
+          $get_all_user_data_result = $herokupostgrsdatabse->query($get_all_user_data);
        $user_data_row = $herokupostgrsdatabse->fetch_array($get_all_user_data_result);
 
        $first_name = $user_data_row['first_name'];
