@@ -27,6 +27,8 @@ $selectquery = "select * from registered_users where email = '$email' ";
 $select_result =  $herokupostgrsdatabse->query($selectquery);
   if (pg_num_rows($select_result) == 1) 
         {
+     $query = "INSERT INTO changepassword_table (email,random_key) VALUES ('$email','$random_key')";
+        $herokupostgrsdatabse->query($query);
 
         	   $sendmailobj->sss($email,$random_key); 
       header('Location: https://startupwala.herokuapp.com/forgotpassword.html');
