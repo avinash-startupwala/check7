@@ -26,24 +26,24 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
      if (pg_num_rows($check_user_query_result) == 0) {
 
-      echo "u cant access this page";
-       echo "<br>";
-       echo "in first if 1";
+     // echo "u cant access this page";
+     //  echo "<br>";
+      // echo "in first if 1";
      }
 
      else{
-            echo "<br>";
-       echo "in first else 2";
+         //   echo "<br>";
+      // echo "in first else 2";
 
        $row = $herokupostgrsdatabse->fetch_array($check_user_query_result);
 
        $random_key_from_db = $row['random_key'];
-            echo "<br>";
-       echo "random_key_from_db = ".$random_key_from_db;
+          //  echo "<br>";
+      // echo "random_key_from_db = ".$random_key_from_db;
 
        if ($random_key_from_db==$random_key) {
               echo "<br>";
-       echo "in second if 3";
+     //  echo "in second if 3";
         $get_all_user_data = "select * from newusers where email='$email'";
 
           $get_all_user_data_result = $herokupostgrsdatabse->query($get_all_user_data);
@@ -65,19 +65,19 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
            $query = "delete from newusers where email='$email'";
       $data = $herokupostgrsdatabse->query($query);
          echo "<br>";
-  echo "data = ";
+  //echo "data = ";
           var_dump($data);
         // Confirm success with the user
        // $sendmailobj->ss($email);
-     // header('Location: https://startupwala.herokuapp.com/thankyou.html');
+     header('Location: https://startupwala.herokuapp.com/thankyou2.html');
 
 
 
 echo "insert query result = ".$insert_query_result;
        }
        else {
-              echo "<br>";
-       echo "in second else 4";
+       //       echo "<br>";
+       //echo "in second else 4";
         echo "this is not a registered email in startupwala database";
 
        }
