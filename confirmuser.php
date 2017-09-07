@@ -27,15 +27,23 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
      if (pg_num_rows($check_user_query_result) == 0) {
 
       echo "u cant access this page";
+       echo "<br>";
+       echo "in first if 1";
      }
 
      else{
+            echo "<br>";
+       echo "in first else 2";
 
        $row = $herokupostgrsdatabse->fetch_array($check_user_query_result);
 
        $random_key_from_db = $row['random_key'];
+            echo "<br>";
+       echo "random_key_from_db = ".$random_key_from_db;
 
        if ($random_key_from_db==$random_key) {
+              echo "<br>";
+       echo "in second if 3";
         $get_all_user_data = "select * from newusers where email='$email'";
 
           $get_all_user_data_result = $herokupostgrsdatabse->fetch_array($get_all_user_data);
@@ -62,6 +70,8 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 echo "insert query result = ".$insert_query_result;
        }
        else {
+              echo "<br>";
+       echo "in second else 4";
         echo "this is not a registered email in startupwala database";
 
        }
