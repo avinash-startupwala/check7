@@ -15,7 +15,7 @@ require 'vendor/autoload.php';
 				$from = new SendGrid\Email(null, "enquiry@bmcgroup.in");
 $subject = "Confirm your Startupwala registration!";
 $to = new SendGrid\Email(null, $email);
-$content = new SendGrid\Content("text/html", "<html><body><h1>Dear $first_name</h1><br><h3>You're almost done! Please click this link below to activate your Startupwala account and get started.</h3><img src=logo.png><br><br>
+$content = new SendGrid\Content("text/html", "<html><body><h1>Dear $first_name</h1><br><h3>You're almost done! Please click this link below to activate your Startupwala account and get started.</h3><br><br>
 <a href=https://startupwala.herokuapp.com/confirmuser.php?key=$random_key&&email=$email>Activate your account</a></body></html>");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
@@ -36,6 +36,6 @@ $response = $sg->client->mail()->send()->post($mail);
 
 
 	}
-// $obj = new SendMail();
-// $obj->ss("avinash.pawar33@yahoo.com","123","Avinash");
+ $obj = new SendMail();
+ $obj->ss("avinash.pawar33@yahoo.com","123","Avinash");
 ?>
