@@ -22,7 +22,7 @@ $content = new SendGrid\Content("text/html", "<html>
 <h3>
 You're almost done! Please click this link below to activate your Startupwala account and get started.
 </h3>
-<img src="images/logo.png">
+<img src=images/logo.png>
 <br>
 <br>
 <a href=https://startupwala.herokuapp.com/confirmuser.php?key=$random_key&&email=$email>Activate your account</a>
