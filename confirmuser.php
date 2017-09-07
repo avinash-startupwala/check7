@@ -60,7 +60,13 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
            $insert_user_data_query = "INSERT INTO registered_users (first_name,last_name,phone,city,looking_for,email, password) VALUES ('$first_name', '$last_name','$phone','$city','$looking_for','$email','$password')";
         $insert_query_result = $herokupostgrsdatabse->query($insert_user_data_query);
-
+         
+         //delete this user from newusers table
+           $query = "delete from newusers where email='$email'";
+      $data = $herokupostgrsdatabse->query($query);
+         echo "<br>";
+  echo "data = ";
+          var_dump($data);
         // Confirm success with the user
        // $sendmailobj->ss($email);
      // header('Location: https://startupwala.herokuapp.com/thankyou.html');
