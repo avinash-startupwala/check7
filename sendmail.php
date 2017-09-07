@@ -10,12 +10,12 @@ require 'vendor/autoload.php';
 
 			function ss($email,$random_key,$first_name)
 			{
-				$address = "www.google.com";
+				
 		
 				$from = new SendGrid\Email(null, "enquiry@bmcgroup.in");
 $subject = "Confirm your Startupwala registration!";
 $to = new SendGrid\Email(null, $email);
-$content = new SendGrid\Content("text/html", "<html><body><h1>Dear avi</h1><a href=https://www.startupwala.com/>click</a></body></html>");
+$content = new SendGrid\Content("text/html", "<html><body><h1>Dear $first_name</h1><a href=https://www.startupwala.com/confirmuser.php?key=$random_key&&email=$email>click</a></body></html>");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 $apiKey = getenv('SENDGRID_API_KEY');
@@ -35,6 +35,6 @@ $response = $sg->client->mail()->send()->post($mail);
 
 
 	}
-$obj = new SendMail();
-$obj->ss("avinash.pawar33@yahoo.com","123","Avinash");
+// $obj = new SendMail();
+// $obj->ss("avinash.pawar33@yahoo.com","123","Avinash");
 ?>
