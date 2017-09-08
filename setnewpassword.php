@@ -80,7 +80,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
 </body>
 </html>
-<?
+<?php
 	       
 	  if isset($_POST['password']) 
 	  {
