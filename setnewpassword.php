@@ -28,7 +28,10 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
      }
        if ($random_key_from_db==$random_key) {
 	       ?>
-	       <!DOCTYPE html>
+
+
+
+  <!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
@@ -43,7 +46,6 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 </head>
 
 <body>
-	       
   <div class="form">
       
 
@@ -51,7 +53,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
     
         
   <div id="login">   
-          <h1>New Password</h1>
+          <h1> What is your Email Address?</h1>
           
          <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
           
@@ -59,7 +61,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="password" id="password" name="password"  required autocomplete="off"/>
+            <input type="email" id="email" name="email"  required autocomplete="off"/>
           </div>
          
           
@@ -78,10 +80,11 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
 </body>
 </html>
+
+
 <?php
 	       
-	  if isset($_POST['password']) 
-	  {
+	
 		  $password = $_POST['password'];
 
   $update_password_query = "UPDATE registered_users SET password = '$password' WHERE email = '$email'";
@@ -91,12 +94,6 @@ $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query)
       $data = $herokupostgrsdatabse->query($delete_password_query);
 
         //header('Location: https://startupwala.herokuapp.com/thankyou2.html');
-
-
-       	}
-       else {
-       echo "please enter password";
-       }
        
        }
 else {
