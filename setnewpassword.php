@@ -9,9 +9,9 @@ if (isset($_POST['password']))
 else
 {
 
- echo $random_key = $_GET['key'];
-echo "<br>";
-  echo $email = $_GET['email'];
+  $random_key = $_GET['key'];
+
+   $email = $_GET['email'];
        $random_key_from_db;
  require_once('heroku_postgres_database.php');
  require_once('sendmail.php');
