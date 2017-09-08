@@ -1,28 +1,5 @@
 <?php
-if (isset($_POST['password']))
-{
-	global $email;
-	 $password = $_POST['password'];
-	
-	echo "password = ".$password;
-	
-	  echo $email;
-	echo "<br>";
-	echo $email;
-	
-
-// $update_password_query = "UPDATE registered_users SET password = '$password' WHERE email = '$email'";
-// $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query);
-// 		    $delete_password_query = "delete from changepassword_table where email='$email'";
-//       $data = $herokupostgrsdatabse->query($delete_password_query);
-//         //header('Location: https://startupwala.herokuapp.com/thankyou2.html');
-//        echo "your password is changed successfully";
-	
-}
-else
-{
-
-  $random_key = $_GET['key'];
+ $random_key = $_GET['key'];
 
    $email = $_GET['email'];
        $random_key_from_db;
@@ -70,7 +47,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
   <div class="form">
  <div id="login">   
           <h1>New Password</h1>
- <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+ <form enctype="multipart/form-data" method="post" action="saveupdatedpassword.php">
 <div class="field-wrap">
             <label>
               New password<span class="req">*</span>
@@ -85,10 +62,12 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 </body>
 </html>
 <?php
+       
+
        }
-else {
-echo "you can't access this page, email link is expired";
-}
+else 
+{
+echo "link expired";
 }
     
 ?>
