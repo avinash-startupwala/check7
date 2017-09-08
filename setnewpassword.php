@@ -5,7 +5,7 @@ echo "set new password";
  echo $random_key = $_GET['key'];
 echo "<br>";
   echo $email = $_GET['email'];
-      
+       $random_key_from_db;
  require_once('heroku_postgres_database.php');
  require_once('sendmail.php');
   // Connect to the database
@@ -52,7 +52,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
  <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <div class="field-wrap">
             <label>
-              Enter new password<span class="req">*</span>
+              New password<span class="req">*</span>
             </label>
             <input type="password" id="password" name="password"  required autocomplete="off"/>
           </div>
