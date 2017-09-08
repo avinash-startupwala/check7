@@ -12,18 +12,15 @@ if (isset($_POST['password']))
 	echo "<br>";
 	echo $email;
 	
-	$get_email = $_GET['email'];
-	
 	echo "<br>";
 	
-	echo $get_email;
-// $password = $_POST['password'];
-// $update_password_query = "UPDATE registered_users SET password = '$password' WHERE email = '$email'";
-// $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query);
-// 		    $delete_password_query = "delete from changepassword_table where email='$email'";
-//       $data = $herokupostgrsdatabse->query($delete_password_query);
-//         //header('Location: https://startupwala.herokuapp.com/thankyou2.html');
-//        echo "your password is changed successfully";
+ $update_password_query = "UPDATE registered_users SET password = '$password' WHERE email = '$email'";
+$update_user_data_result =  $herokupostgrsdatabse->query($update_password_query);
+		    $delete_password_query = "delete from changepassword_table where email='$email'";
+      $data = $herokupostgrsdatabse->query($delete_password_query);
+        //header('Location: https://startupwala.herokuapp.com/thankyou2.html');
+       echo "your password is changed successfully";
+	 session_destroy();
 }
 else
 {
