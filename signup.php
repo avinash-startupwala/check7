@@ -20,7 +20,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
     
     //if (!empty($username) && !empty($password1) && !empty($password2) && ($password1 == $password2)) {
       // Make sure someone isn't already registered using this username
-      $query = "SELECT * FROM registered_users WHERE email = '$username'";
+      $query = "SELECT * FROM registered_users WHERE email = '$email'";
       $data = $herokupostgrsdatabse->query($query);
       if (pg_num_rows($data) == 0) {
         // The username is unique, so insert the data into the database
