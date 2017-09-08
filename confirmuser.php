@@ -26,7 +26,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 
      if (pg_num_rows($check_user_query_result) == 0) {
 
-     // echo "u cant access this page";
+      echo "u cant access this page";
      //  echo "<br>";
       // echo "in first if 1";
      }
@@ -69,7 +69,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
           var_dump($data);
         // Confirm success with the user
        // $sendmailobj->ss($email);
-     header('Location: https://startupwala.herokuapp.com/thankyou2.html');
+    // header('Location: https://startupwala.herokuapp.com/thankyou2.html');
 
 
 
