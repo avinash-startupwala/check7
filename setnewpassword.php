@@ -2,8 +2,9 @@
 
 echo "set new password";
 
-  $random_key = $_GET['key'];
-  $email = $_GET['email'];
+ echo $random_key = $_GET['key'];
+echo "<br>";
+  echo $email = $_GET['email'];
       
  require_once('heroku_postgres_database.php');
  require_once('sendmail.php');
@@ -33,7 +34,7 @@ $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query)
 		    $delete_password_query = "delete from changepassword_table where email='$email'";
       $data = $herokupostgrsdatabse->query($delete_password_query);
 
-        header('Location: https://startupwala.herokuapp.com/thankyou2.html');
+        //header('Location: https://startupwala.herokuapp.com/thankyou2.html');
 
 
        	}
