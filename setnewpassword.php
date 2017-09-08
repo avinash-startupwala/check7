@@ -80,7 +80,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
   <div class="form">
  <div id="login">   
           <h1>New Password</h1>
- <form enctype="multipart/form-data" method="post" action="saveupdatedpassword.php">
+ <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <div class="field-wrap">
             <label>
               New password<span class="req">*</span>
