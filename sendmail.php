@@ -64,7 +64,7 @@ $content = new SendGrid\Content("text/html", "<html>
 <br>
 
 <br>
-<a href=https://startupwala.herokuapp.com/forgotpasswordnew.php?key=$random_key&&email=$email>Reset my password</a>
+<a href=https://startupwala.herokuapp.com/setnewpassword.php?key=$random_key&&email=$email>Reset my password</a>
 </body></html>");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
