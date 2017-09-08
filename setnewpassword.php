@@ -21,7 +21,7 @@ if (isset($_POST['password']))
 $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query);
 		    $delete_password_query = "delete from changepassword_table where email='$email'";
       $data = $herokupostgrsdatabse->query($delete_password_query);
-        //header('Location: https://startupwala.herokuapp.com/thankyou2.html');
+        header('Location: https://startupwala.herokuapp.com/password-changed.html');
        echo "your password is changed successfully";
 	 session_destroy();
 }
