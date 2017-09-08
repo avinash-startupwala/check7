@@ -69,7 +69,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
           var_dump($data);
         // Confirm success with the user
        // $sendmailobj->ss($email);
-    // header('Location: https://startupwala.herokuapp.com/thankyou2.html');
+    header('Location: https://startupwala.herokuapp.com/thankyou2.html');
 
 
 
