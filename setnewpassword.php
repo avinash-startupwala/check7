@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign-Up Form</title>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
 <?php
 
 echo "set new password";
@@ -27,6 +43,48 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
       // echo "random_key_from_db = ".$random_key_from_db;
      }
        if ($random_key_from_db==$random_key) {
+	       ?>
+	       
+	       
+  <div class="form">
+      
+
+      
+    
+        
+  <div id="login">   
+          <h1>New Password</h1>
+          
+         <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="password" id="password" name="password"  required autocomplete="off"/>
+          </div>
+         
+          
+
+          <button type="submit" class="button button-block"/>Submit</button>
+          
+          </form>
+
+
+  
+      
+</div> <!-- /form -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
+<?
+	       
+	  if isset($_POST['password']) 
+	  {
+		  $password = $_POST['password'];
 
   $update_password_query = "UPDATE registered_users SET password = '$password' WHERE email = '$email'";
 $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query);
@@ -38,6 +96,11 @@ $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query)
 
 
        	}
+       else {
+       echo "please enter password";
+       }
+       
+       }
 else {
 echo "you can't access this page, email link is expired";
 }
