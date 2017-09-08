@@ -11,12 +11,7 @@ $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query)
       $data = $herokupostgrsdatabse->query($delete_password_query);
         //header('Location: https://startupwala.herokuapp.com/thankyou2.html');
        echo "your password is changed successfully";
-       }
-else {
-echo "you can't access this page, email link is expired";
 }
-}
-
 else {
 echo "please enter password";
 }
