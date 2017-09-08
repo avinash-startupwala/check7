@@ -1,7 +1,40 @@
 <?php
+error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+session_start();
+if (isset($_POST['password']))
+{
+       $password = $_POST['password'];
+	echo "<br>";
+	echo $password;
+       $email = $_SESSION['email'] ;
+	echo "<br>";
+	echo $email;
+	
+	$get_email = $_GET['email'];
+	
+	echo "<br>";
+	
+	echo $get_email;
+// $password = $_POST['password'];
+// $update_password_query = "UPDATE registered_users SET password = '$password' WHERE email = '$email'";
+// $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query);
+// 		    $delete_password_query = "delete from changepassword_table where email='$email'";
+//       $data = $herokupostgrsdatabse->query($delete_password_query);
+//         //header('Location: https://startupwala.herokuapp.com/thankyou2.html');
+//        echo "your password is changed successfully";
+}
+else
+{
+	
+  
  $random_key = $_GET['key'];
 
    $email = $_GET['email'];
+	
+	
+   $_SESSION['email'] = $email;
        $random_key_from_db;
  require_once('heroku_postgres_database.php');
  require_once('sendmail.php');
@@ -68,6 +101,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
 else 
 {
 echo "link expired";
+}
 }
     
 ?>
