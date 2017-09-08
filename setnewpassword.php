@@ -25,7 +25,7 @@ $herokupostgrsdatabse = new HerokuPostgresDatabase();
        $random_key_from_db = $row['random_key'];
           //  echo "<br>";
       // echo "random_key_from_db = ".$random_key_from_db;
-     }
+     
        if ($random_key_from_db==$random_key) {
 	       ?>
 
@@ -77,4 +77,5 @@ $update_user_data_result =  $herokupostgrsdatabse->query($update_password_query)
 else {
 echo "you can't access this page, email link is expired";
 }
+     }
 ?>
