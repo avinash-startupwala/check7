@@ -46,7 +46,7 @@
         <div id="signup">   
           <h1>Sign Up for Free</h1>
           
-          <form action="newusers.php" method="post">
+          <form action="newusers.php" method="post" autocomplete="on">
         
           
             <div class="top-row">
@@ -128,7 +128,7 @@
         <div id="login">   
           <h1>Welcome Back!</h1>
           
-          <form action="login.php" method="post">
+          <form action="login.php" method="post" autocomplete="on">
           
    <div class="field-wrap">
             <label>
